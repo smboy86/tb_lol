@@ -26,6 +26,10 @@ public class MainActivity extends AppCompatActivity {
                         .setAction("Action", null).show();
             }
         });
+
+
+        // example
+        //https://kr.api.pvp.net/api/lol/kr/v1.2/champion?freeToPlay=true&api_key=ace2b701-4682-4dd7-a78b-322a8de6be5b
     }
 
     @Override
