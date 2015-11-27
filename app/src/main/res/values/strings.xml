@@ -2,4 +2,6 @@
     <string name="app_name">Hello</string>
     <string name="action_settings">Settings</string>
     <string name="main_text">My name is Will</string>
+
+    <string name="notification">"알림"</string>
 </resources>

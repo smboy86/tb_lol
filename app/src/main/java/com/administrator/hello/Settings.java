@@ -14,9 +14,6 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
 
-/**
- * Created by Administrator on 2015-11-26.
- */
 public class Settings {
     private static final String TAG = Settings.class.getSimpleName();
 
@@ -30,11 +27,14 @@ public class Settings {
 
     // init variable
     public static final String TEAM_NAME = "Team ButterFlower";
-    public static final String API_SERVER = "https://kr.api.pvp.net/";
+    public static final String API_SERVER = "https://kr.api.pvp.net";
+    public static final String API_SERVER_1 = "http://api.openweathermap.org";
+
     public static final String lolKey = "ace2b701-4682-4dd7-a78b-322a8de6be5b";
 
 
-
+    // base configuration
+    public static final int TIMEOUT = 5 * 1000;
 
 
     private Settings(Context context){

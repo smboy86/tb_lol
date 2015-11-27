@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:id="@+id/layout_dialog"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:gravity="top"
+	android:orientation="vertical"
+	android:background="@drawable/bg_popup_default">
+	<RelativeLayout
+		android:id="@+id/layout_dialog_title_area"
+		android:layout_width="match_parent"
+		android:layout_height="41dp"
+		android:paddingLeft="17dp"
+		android:paddingRight="17dp"
+		android:background="@drawable/bg_popup_top">
+		<!-- Title -->
+		<TextView
+			android:id="@+id/txt_dialog_title"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_centerVertical="true"
+			android:layout_alignParentLeft="true"
+			android:text="@string/notification"
+			android:textSize="@dimen/text_60"
+			android:textColor="@color/text_white"/>
+		<ImageView
+			android:id="@+id/img_dialog_close"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_alignParentRight="true"
+			android:layout_centerVertical="true"
+			android:src="@drawable/icon_close"
+			android:visibility="invisible"/>
+	</RelativeLayout>
+	<LinearLayout
+		android:layout_width="match_parent"
+		android:layout_height="0dp"
+		android:layout_weight="1"
+		android:orientation="vertical">
+		<!-- The message -->
+		<LinearLayout
+			android:id="@+id/layout_dialog_content_area"
+			android:layout_width="match_parent"
+			android:layout_height="0dp"
+			android:layout_weight="1"
+			android:gravity="center_vertical"
+			android:orientation="vertical"
+			android:paddingTop="30dp"
+			android:paddingBottom="30dp"
+			android:layout_marginBottom="5dp">
+			<TextView
+				android:id="@+id/txt_dialog_msg"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_margin="10dp"
+				android:layout_marginBottom="5dp"
+				android:layout_marginTop="4dp"
+				android:gravity="center"
+				android:padding="8dp"
+				android:textSize="@dimen/text_40"
+				android:textColor="@color/text_black"/>
+			<ProgressBar
+				android:id="@+id/prog_dialog_progressbar"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				style="?android:attr/progressBarStyle"
+				android:visibility="gone"/>
+		</LinearLayout>
+
+		<!-- line -->
+		<LinearLayout
+			android:layout_width="match_parent"
+			android:layout_height="1dp"
+			android:background="@color/bg_first" />
+
+		<LinearLayout
+			android:id="@+id/layout_dialog_button_area"
+			android:layout_width="match_parent"
+			android:layout_height="40dp"
+			android:orientation="horizontal">
+			<!-- Yes button -->
+			<Button
+				android:id="@+id/btn_dialog_ok"
+				android:layout_width="0dp"
+				android:layout_height="match_parent"
+				android:layout_weight="1"
+				android:text="test"
+				android:gravity="center"
+				android:textColor="@drawable/txt_dialog_btn"
+				android:textSize="@dimen/text_40"
+				android:visibility="gone"/>
+
+			<!-- line -->
+			<LinearLayout
+				android:id="@+id/layout_dialog_vline"
+				android:layout_width="1dp"
+				android:layout_height="match_parent"
+				android:background="@color/bg_first"
+				android:orientation="horizontal"
+				android:visibility="gone"/>
+
+			<!-- No Button -->
+			<Button
+				android:id="@+id/btn_dialog_cancel"
+				android:layout_width="0dp"
+				android:layout_height="match_parent"
+				android:layout_weight="1"
+				android:text="취소"
+				android:gravity="center"
+				android:textColor="@drawable/txt_dialog_btn"
+				android:textSize="@dimen/text_40"
+				android:visibility="gone"/>
+		</LinearLayout>
+	</LinearLayout>
+</LinearLayout>
