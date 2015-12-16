@@ -82,9 +82,9 @@ public class MainActivity extends BaseActivity {
     @Override
     protected void onApiResponsed(ApiClient.ApiCommand command, Lolfree result) {
         if (command == ApiClient.ApiCommand.CMD_TEST_LOL) {
-            Log.d(TAG, "smPark onApiResponse - " + result.toString());
+            //Log.d(TAG, "smPark onApiResponse - " + result.toString());
 //            if (result.success) {
-//                mTextview.setText(result.toString());
+                mTextview.setText(result.toString());
 //            } else {
 //                mTextview.setText("fail....");
 //            }

@@ -37,8 +37,8 @@ public abstract class BaseActivity extends AppCompatActivity{
                     int requestCode = data.getInt(ApiClient.EXTRA_REQUEST_CODE);
                     String response = data.getString(ApiClient.EXTRA_RESPONSE_CONTENTS);
                     Log.v(TAG, "response = " + response);
-                    //JsonResult result = mApiClient.parseJsonResult(response);
-                    Lolfree result = mApiClient.parseJsonResult2(response);
+
+                    Lolfree result = mApiClient.parseJsonTestLol(response);
                     ApiClient.ApiCommand command = ApiClient.ApiCommand.getByIndex(requestCode);
 
                     onApiResponsed(command, result);

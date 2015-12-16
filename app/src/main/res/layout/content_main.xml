@@ -18,14 +18,16 @@
         android:layout_height="wrap_content"
         android:text="@string/main_text" />
 
-    <TextView
-        android:id="@+id/result"
+    <ScrollView
+        android:id="@+id/scrollView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/name"/>
+        android:layout_below="@id/name">
 
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src=""/>
+        <TextView
+            android:id="@+id/result"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </ScrollView>
+
     </RelativeLayout>

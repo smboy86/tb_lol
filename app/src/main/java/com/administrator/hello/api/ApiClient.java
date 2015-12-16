@@ -20,6 +20,8 @@ import com.administrator.hello.bean.Lolfree;
 import com.administrator.hello.util.Utils;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
 
 import org.apache.http.NameValuePair;
 import org.apache.http.message.BasicNameValuePair;
@@ -29,6 +31,7 @@ import java.util.List;
 
 public class ApiClient extends RequestClient{
 	private static final String TAG = ApiClient.class.getSimpleName();
+	Gson gson = new Gson();
 
 	public static final String DATETIME_FORMAT = "yyyy-MM-dd HH:mm:ss";
 	public static final String DATE_FORMAT = "yyyy-MM-dd";
@@ -102,23 +105,26 @@ public class ApiClient extends RequestClient{
 //		return params;
 //	}
 
-	public JsonResult parseJsonResult(String response) {
-		JsonResult result = new JsonResult(false, null, null);
-		if (response != null && response.length() > 0) {
-			try {
-				result = mGson.fromJson(response, JsonResult.class);
-			} catch (Exception e) {
-				Log.w(TAG, "ApiClient.parseJsonResult() fail!", e);
-			}
-		}
-		return result;
-	}
+	/*
+	 * 파싱 메소드들 모음
+	 * 1. parseJsonTestLol champions
+	 *
+	 */
+	public Lolfree parseJsonTestLol(String response) {
+		JsonElement element = gson.fromJson (response, JsonElement.class);
+		JsonObject jsonObj = element.getAsJsonObject();
 
-	public Lolfree parseJsonResult2(String response) {
+		//Log.d("smpark string 테스트", String.valueOf(jsonObj.get("champions").getAsJsonArray().get(0).getAsJsonObject().get("id")));
+
 		Lolfree result = new Lolfree();
 		if (response != null && response.length() > 0) {
 			try {
 				result = mGson.fromJson(response, Lolfree.class);
+				for (Lolfree.ChampionList cList: result.getChampionListList()) {
+					Log.d("무료 챔피언 리스트", cList.getId()+ "   " + cList.getActive() + "   " + cList.getBotEnabled() + "   " + cList.getFreeToPlay()); // 이런 방법으로 사용 가능
+				}
+						
+				Log.d("smpark string 테스트2222", result.toString());
 			} catch (Exception e) {
 				Log.w(TAG, "ApiClient.parseJsonResult() fail!", e);
 			}
