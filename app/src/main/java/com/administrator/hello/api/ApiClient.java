@@ -120,11 +120,9 @@ public class ApiClient extends RequestClient{
 		if (response != null && response.length() > 0) {
 			try {
 				result = mGson.fromJson(response, Lolfree.class);
-				for (Lolfree.ChampionList cList: result.getChampionListList()) {
-					Log.d("무료 챔피언 리스트", cList.getId()+ "   " + cList.getActive() + "   " + cList.getBotEnabled() + "   " + cList.getFreeToPlay()); // 이런 방법으로 사용 가능
-				}
-						
-				Log.d("smpark string 테스트2222", result.toString());
+				String str = "";
+
+				//Log.d("smpark string 테스트2222", result.toString());
 			} catch (Exception e) {
 				Log.w(TAG, "ApiClient.parseJsonResult() fail!", e);
 			}

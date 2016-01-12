@@ -81,3 +81,4 @@ public abstract class BaseActivity extends AppCompatActivity{
 
     protected abstract void onApiResponsed(ApiClient.ApiCommand command, Lolfree result);
 }
+

@@ -51,7 +51,7 @@ public class MainActivity extends BaseActivity {
         //https://kr.api.pvp.net/api/lol/kr/v1.2/champion?freeToPlay=true&api_key=ace2b701-4682-4dd7-a78b-322a8de6be5b
         String key = Settings.lolKey;
 
-        mTextview = (TextView) findViewById(R.id.result);
+        mTextview = (TextView) findViewById(R.id.champion_1_id);
 
         Log.d(TAG, "smPark testLog");
         mApiClient.testLol();
@@ -84,7 +84,13 @@ public class MainActivity extends BaseActivity {
         if (command == ApiClient.ApiCommand.CMD_TEST_LOL) {
             //Log.d(TAG, "smPark onApiResponse - " + result.toString());
 //            if (result.success) {
-                mTextview.setText(result.toString());
+
+            String str = "";
+            for(int i=0; i < result.getChampionListList().size(); i++){
+                str = str + result.toString(i);
+            }
+
+            mTextview.setText(str);
 //            } else {
 //                mTextview.setText("fail....");
 //            }

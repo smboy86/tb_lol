@@ -50,5 +50,21 @@ public class Lolfree {
     public String toString() {
         return "Lolfree{" +
                 "champion=" + champions + "}";
+
     }
+
+    public String toString(String a) {
+        return "";
+    }
+
+    public String toString(int index) {
+        return "\n\nNo " + index + " champion "
+                + "id : " + champions.get(index).getId()
+                + " active : " + champions.get(index).getActive()
+                + " botEnabled : " + champions.get(index).getBotEnabled()
+                + " freeToPlay : " + champions.get(index).getFreeToPlay()
+                + " botMmEnabled : " + champions.get(index).getBotMmEnabled()
+                + " rankedPlayEnabled : " + champions.get(index).getRankedPlayEnavled();
+    }
+
 }

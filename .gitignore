@@ -9,3 +9,4 @@
 
 #smpark
 /.idea/*
+/gradle.properties
