@@ -22,6 +22,7 @@ import android.view.View;
 import android.widget.TextView;
 
 import com.administrator.hello.api.ApiClient;
+import com.administrator.hello.bean.Champions;
 import com.administrator.hello.bean.Lolfree;
 import com.administrator.hello.widget.BaseActivity;
 
@@ -80,15 +81,16 @@ public class MainActivity extends BaseActivity {
     }
 
     @Override
-    protected void onApiResponsed(ApiClient.ApiCommand command, Lolfree result) {
+    protected void onApiResponsed(ApiClient.ApiCommand command, Champions result) {
         if (command == ApiClient.ApiCommand.CMD_TEST_LOL) {
             //Log.d(TAG, "smPark onApiResponse - " + result.toString());
 //            if (result.success) {
 
             String str = "";
-            for(int i=0; i < result.getChampionListList().size(); i++){
-                str = str + result.toString(i);
-            }
+            //for(int i=0; i < result.getChampions().size(); i++){
+                //str = str + result.getChampions().get(4).toString();
+            str = str + result.getChampions().toString();
+            //}
 
             mTextview.setText(str);
 //            } else {

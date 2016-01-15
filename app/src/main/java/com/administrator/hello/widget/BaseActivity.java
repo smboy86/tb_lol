@@ -18,6 +18,7 @@ import android.util.Log;
 
 import com.administrator.hello.Settings;
 import com.administrator.hello.api.ApiClient;
+import com.administrator.hello.bean.Champions;
 import com.administrator.hello.bean.Lolfree;
 
 public abstract class BaseActivity extends AppCompatActivity{
@@ -38,7 +39,7 @@ public abstract class BaseActivity extends AppCompatActivity{
                     String response = data.getString(ApiClient.EXTRA_RESPONSE_CONTENTS);
                     Log.v(TAG, "response = " + response);
 
-                    Lolfree result = mApiClient.parseJsonTestLol(response);
+                    Champions result = mApiClient.parseJsonTestLol(response);
                     ApiClient.ApiCommand command = ApiClient.ApiCommand.getByIndex(requestCode);
 
                     onApiResponsed(command, result);
@@ -79,6 +80,6 @@ public abstract class BaseActivity extends AppCompatActivity{
 //        }
     }
 
-    protected abstract void onApiResponsed(ApiClient.ApiCommand command, Lolfree result);
+    protected abstract void onApiResponsed(ApiClient.ApiCommand command, Champions result);
 }
 

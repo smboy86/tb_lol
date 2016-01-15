@@ -15,6 +15,8 @@ import android.os.Handler;
 import android.util.Log;
 
 import com.administrator.hello.Settings;
+import com.administrator.hello.bean.Champion;
+import com.administrator.hello.bean.Champions;
 import com.administrator.hello.bean.JsonResult;
 import com.administrator.hello.bean.Lolfree;
 import com.administrator.hello.util.Utils;
@@ -110,16 +112,19 @@ public class ApiClient extends RequestClient{
 	 * 1. parseJsonTestLol champions
 	 *
 	 */
-	public Lolfree parseJsonTestLol(String response) {
+	public Champions parseJsonTestLol(String response) {
 		JsonElement element = gson.fromJson (response, JsonElement.class);
 		JsonObject jsonObj = element.getAsJsonObject();
 
 		//Log.d("smpark string 테스트", String.valueOf(jsonObj.get("champions").getAsJsonArray().get(0).getAsJsonObject().get("id")));
 
-		Lolfree result = new Lolfree();
+		//Lolfree result = new Lolfree();
+		Champions result = new Champions();
 		if (response != null && response.length() > 0) {
 			try {
-				result = mGson.fromJson(response, Lolfree.class);
+				//result = mGson.fromJson(response, Lolfree.class);
+				result = mGson.fromJson(response, Champions.class);
+
 				String str = "";
 
 				//Log.d("smpark string 테스트2222", result.toString());
